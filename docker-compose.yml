@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  jupyternotebook:
+    build:
+      context: .
+      args:
+        - SETUP_FILE_PATH=./setup.py
+    image: jupyternotebook:latest
+    # container_name: jupyternotebook
+    restart: always
+    ports:
+      - 80:8888
+    volumes:
+      - /home/ad_tikhomirov:/home/work
+
